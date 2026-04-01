@@ -3,9 +3,1208 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Barber Beasts — Portstewart</title>
+<title>Barber Beasts | Barbershop & Grooming | Portstewart, Causeway Coast</title>
+<meta name="description" content="Portstewart's premier barbershop on the Promenade. Expert haircuts, hot towel shaves, beard trims. Trained at the London School of Barbers. Book online with Barber Beasts.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --dark: #1a2030;
+    --dark2: #151b28;
+    --light: #ffffff;
+    --warm: #f4efe7;
+    --warm2: #ede8df;
+    --accent: #b8922a;
+    --accent-light: #d4a93a;
+    --text: #1a2030;
+    --text-muted: #5a6070;
+    --gold-line: #b8922a;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text);
+    background: var(--light);
+    line-height: 1.6;
+  }
+
+  /* ---- HEADER ---- */
+  header {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    background: rgba(26, 32, 48, 0.96);
+    backdrop-filter: blur(8px);
+    padding: 0 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+    border-bottom: 1px solid rgba(184, 146, 42, 0.3);
+  }
+
+  .logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 0.03em;
+    text-decoration: none;
+  }
+  .logo span { color: var(--accent); }
+
+  nav { display: flex; align-items: center; gap: 2rem; }
+
+  nav a {
+    color: rgba(255,255,255,0.8);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  nav a:hover { color: var(--accent-light); }
+
+  .btn-book {
+    background: var(--accent);
+    color: #fff !important;
+    padding: 0.55rem 1.4rem;
+    border-radius: 4px;
+    font-weight: 600 !important;
+    font-size: 0.85rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.08em !important;
+    transition: background 0.2s, transform 0.15s;
+    text-decoration: none;
+  }
+  .btn-book:hover { background: var(--accent-light); transform: translateY(-1px); }
+
+  .mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+  }
+  .mobile-menu-toggle span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: #fff;
+    margin: 5px 0;
+    transition: 0.3s;
+  }
+
+  /* ---- HERO ---- */
+  .hero {
+    min-height: 100vh;
+    background: linear-gradient(rgba(15,20,32,0.55), rgba(15,20,32,0.7)),
+                url('images/hero-street.png') center center / cover no-repeat;
+    display: flex;
+    align-items: center;
+    padding: 120px 5% 80px;
+    position: relative;
+  }
+
+  .hero-content { max-width: 680px; }
+
+  .eyebrow {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent-light);
+    margin-bottom: 1.2rem;
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.4rem, 5vw, 4rem);
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.15;
+    margin-bottom: 1.4rem;
+  }
+
+  .hero h1 em {
+    font-style: normal;
+    color: var(--accent-light);
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.85);
+    max-width: 520px;
+    margin-bottom: 2.2rem;
+    line-height: 1.7;
+  }
+
+  .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; }
+
+  .btn-primary {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    padding: 0.9rem 2rem;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .btn-primary:hover { background: var(--accent-light); transform: translateY(-2px); }
+
+  .btn-secondary {
+    display: inline-block;
+    border: 2px solid rgba(255,255,255,0.5);
+    color: #fff;
+    padding: 0.9rem 2rem;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .btn-secondary:hover { border-color: var(--accent-light); background: rgba(184,146,42,0.15); }
+
+  .hero-badges {
+    position: absolute;
+    bottom: 40px;
+    left: 5%;
+    display: flex;
+    gap: 2rem;
+  }
+  .hero-badge { text-align: center; }
+  .hero-badge .num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--accent-light);
+    line-height: 1;
+  }
+  .hero-badge .label {
+    font-size: 0.72rem;
+    color: rgba(255,255,255,0.7);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-top: 0.2rem;
+  }
+  .badge-divider {
+    width: 1px;
+    background: rgba(255,255,255,0.2);
+    align-self: stretch;
+  }
+
+  /* ---- TAGLINE STRIP ---- */
+  .tagline-strip {
+    background: var(--dark);
+    padding: 4rem 5%;
+    text-align: center;
+    border-top: 3px solid var(--accent);
+  }
+  .tagline-strip h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+    color: #fff;
+    margin-bottom: 1rem;
+  }
+  .tagline-strip h2 em { font-style: normal; color: var(--accent-light); }
+  .tagline-strip p {
+    font-size: 1.05rem;
+    color: rgba(255,255,255,0.7);
+    max-width: 680px;
+    margin: 0 auto 1.5rem;
+    line-height: 1.75;
+  }
+  .gold-rule {
+    width: 60px;
+    height: 2px;
+    background: var(--accent);
+    margin: 0 auto;
+  }
+
+  /* ---- SECTIONS ---- */
+  section { padding: 80px 5%; }
+
+  .section-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent);
+    display: block;
+    margin-bottom: 0.8rem;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+  .section-title.light { color: #fff; }
+
+  .section-sub {
+    font-size: 1rem;
+    color: var(--text-muted);
+    max-width: 560px;
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+  }
+  .section-sub.light { color: rgba(255,255,255,0.7); }
+
+  /* ---- SERVICES ---- */
+  .services-section { background: var(--light); }
+
+  .services-header { text-align: center; max-width: 640px; margin: 0 auto 3rem; }
+
+  .price-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .price-card {
+    background: var(--warm);
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid rgba(184,146,42,0.15);
+  }
+  .price-card-header {
+    background: var(--dark);
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .price-card-header h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: #fff;
+    font-weight: 700;
+  }
+  .price-card-header .category-tag {
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent-light);
+    margin-left: auto;
+  }
+  .price-card-body { padding: 1.2rem 1.5rem; }
+  .price-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid rgba(184,146,42,0.12);
+    font-size: 0.93rem;
+  }
+  .price-row:last-child { border-bottom: none; }
+  .price-row .service-name { color: var(--text); font-weight: 500; }
+  .price-row .price { color: var(--accent); font-weight: 700; font-size: 1rem; }
+
+  .services-note {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+  }
+
+  /* ---- ABOUT / SHOPFRONT ---- */
+  .about-section {
+    background: var(--warm);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+
+  .about-image {
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+  }
+  .about-image img {
+    width: 100%;
+    height: 520px;
+    object-fit: cover;
+    display: block;
+  }
+  .about-image-badge {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background: var(--dark);
+    color: #fff;
+    padding: 0.8rem 1.2rem;
+    border-radius: 4px;
+    text-align: center;
+    border-top: 3px solid var(--accent);
+  }
+  .about-image-badge .big { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--accent-light); line-height: 1; }
+  .about-image-badge .small { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.7); margin-top: 0.2rem; }
+
+  .about-content .section-sub { margin-bottom: 1.5rem; }
+
+  .credentials {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  .credential {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .cred-icon {
+    width: 42px;
+    height: 42px;
+    background: var(--dark);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .cred-icon svg { width: 20px; height: 20px; fill: var(--accent-light); }
+  .cred-text strong { display: block; font-size: 0.9rem; font-weight: 600; color: var(--text); }
+  .cred-text span { font-size: 0.85rem; color: var(--text-muted); }
+
+  /* ---- WHY CARDS ---- */
+  .why-section { background: var(--dark); }
+  .why-header { text-align: center; max-width: 600px; margin: 0 auto 3rem; }
+
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .why-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(184,146,42,0.2);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.25s, border-color 0.25s;
+  }
+  .why-card:hover { transform: translateY(-4px); border-color: rgba(184,146,42,0.5); }
+
+  .why-card-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+  }
+  .why-card-body { padding: 1.4rem; }
+  .why-card-body h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: #fff;
+    margin-bottom: 0.5rem;
+  }
+  .why-card-body p { font-size: 0.88rem; color: rgba(255,255,255,0.65); line-height: 1.65; }
+
+  /* ---- INTERIOR / ATMOSPHERE ---- */
+  .atmosphere-section {
+    background: var(--light);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+
+  .atmos-image {
+    border-radius: 6px;
+    overflow: hidden;
+    order: 2;
+  }
+  .atmos-image img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    display: block;
+  }
+  .atmos-content { order: 1; }
+
+  .atmos-features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  .atmos-feature {
+    background: var(--warm);
+    padding: 1rem;
+    border-radius: 6px;
+    border-left: 3px solid var(--accent);
+  }
+  .atmos-feature strong { display: block; font-size: 0.85rem; font-weight: 600; color: var(--text); margin-bottom: 0.25rem; }
+  .atmos-feature span { font-size: 0.8rem; color: var(--text-muted); }
+
+  /* ---- REVIEWS ---- */
+  .reviews-section { background: var(--warm); }
+  .reviews-header { text-align: center; max-width: 600px; margin: 0 auto 3rem; }
+
+  .stars {
+    color: #f5a623;
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+  }
+
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    max-width: 1100px;
+    margin: 0 auto 2.5rem;
+  }
+
+  .review-card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 1.6rem;
+    border: 1px solid rgba(184,146,42,0.15);
+    position: relative;
+  }
+  .review-card::before {
+    content: '\201C';
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    color: var(--accent);
+    opacity: 0.25;
+    position: absolute;
+    top: 0.5rem;
+    left: 1rem;
+    line-height: 1;
+  }
+  .review-text {
+    font-size: 0.93rem;
+    color: var(--text);
+    line-height: 1.7;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 1;
+  }
+  .reviewer { display: flex; align-items: center; gap: 0.75rem; }
+  .reviewer-avatar {
+    width: 38px;
+    height: 38px;
+    background: var(--dark);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    color: var(--accent-light);
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .reviewer-info strong { display: block; font-size: 0.88rem; font-weight: 600; }
+  .reviewer-info span { font-size: 0.78rem; color: var(--text-muted); }
+
+  .reviews-cta { text-align: center; }
+  .btn-outline {
+    display: inline-block;
+    border: 2px solid var(--accent);
+    color: var(--accent);
+    padding: 0.75rem 1.8rem;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+  }
+  .btn-outline:hover { background: var(--accent); color: #fff; }
+
+  /* ---- BOOKING CTA ---- */
+  .booking-section {
+    background: var(--dark);
+    text-align: center;
+    padding: 90px 5%;
+  }
+  .booking-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: #fff;
+    margin-bottom: 1rem;
+  }
+  .booking-section h2 em { font-style: normal; color: var(--accent-light); }
+  .booking-section p {
+    color: rgba(255,255,255,0.7);
+    font-size: 1.05rem;
+    max-width: 540px;
+    margin: 0 auto 2.5rem;
+    line-height: 1.7;
+  }
+
+  /* ---- CONTACT ---- */
+  .contact-section {
+    background: var(--warm);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: start;
+  }
+
+  .contact-info h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .contact-details { display: flex; flex-direction: column; gap: 1rem; margin-bottom: 2rem; }
+
+  .contact-item { display: flex; align-items: flex-start; gap: 1rem; }
+  .contact-icon {
+    width: 44px;
+    height: 44px;
+    background: var(--dark);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .contact-icon svg { width: 20px; height: 20px; fill: #fff; }
+  .contact-item-text strong { display: block; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); margin-bottom: 0.15rem; }
+  .contact-item-text p { font-size: 0.95rem; color: var(--text); }
+  .contact-item-text a { color: var(--text); text-decoration: none; }
+  .contact-item-text a:hover { color: var(--accent); }
+
+  .hours-grid {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.4rem 1.5rem;
+    font-size: 0.9rem;
+  }
+  .hours-day { font-weight: 600; color: var(--text); }
+  .hours-time { color: var(--text-muted); }
+  .hours-closed { color: #999; }
+
+  .contact-social { display: flex; gap: 0.75rem; margin-top: 1.5rem; }
+  .contact-social a { display: flex; align-items: center; justify-content: center; }
+  .contact-social a img { width: 38px; height: 38px; object-fit: contain; transition: opacity 0.2s, transform 0.2s; }
+  .contact-social a:hover img { opacity: 0.8; transform: translateY(-2px); }
+
+  /* ---- CONTACT FORM ---- */
+  .contact-form-wrap { }
+
+  .contact-form-wrap h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .form-group { margin-bottom: 1.1rem; }
+  .form-group label { display: block; font-size: 0.82rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); margin-bottom: 0.4rem; }
+  .form-group input, .form-group textarea, .form-group select {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    color: var(--text);
+    transition: border-color 0.2s;
+    outline: none;
+  }
+  .form-group input:focus, .form-group textarea:focus, .form-group select:focus { border-color: var(--accent); }
+  .form-group textarea { resize: vertical; min-height: 110px; }
+
+  .honeypot { display: none !important; }
+
+  .form-submit {
+    width: 100%;
+    background: var(--dark);
+    color: #fff;
+    border: none;
+    padding: 0.9rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .form-submit:hover { background: var(--accent); }
+  .form-submit.success { background: #25D366; pointer-events: none; }
+
+  .form-success-msg {
+    display: none;
+    background: #f0f9f4;
+    border: 1px solid #25D366;
+    border-radius: 6px;
+    padding: 1.5rem;
+    text-align: center;
+  }
+  .form-success-msg h4 { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--text); margin-bottom: 0.5rem; }
+  .form-success-msg p { font-size: 0.9rem; color: var(--text-muted); }
+
+  /* ---- URGENCY BANNER ---- */
+  .urgency-banner {
+    background: var(--accent);
+    padding: 1.2rem 5%;
+    text-align: center;
+  }
+  .urgency-banner p {
+    color: #fff;
+    font-size: 0.95rem;
+    font-weight: 600;
+  }
+  .urgency-banner a { color: #fff; text-decoration: underline; }
+
+  /* ---- FOOTER ---- */
+  footer {
+    background: var(--dark2);
+    padding: 2.5rem 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    border-top: 1px solid rgba(184,146,42,0.2);
+  }
+  .footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    color: #fff;
+    text-decoration: none;
+  }
+  .footer-logo span { color: var(--accent); }
+  .footer-copy { font-size: 0.8rem; color: rgba(255,255,255,0.4); }
+  .footer-copy a { color: rgba(255,255,255,0.4); text-decoration: none; }
+  .footer-copy a:hover { color: var(--accent-light); }
+
+  /* ---- ANIMATIONS ---- */
+  .fade-up { opacity: 1; transform: translateY(0); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .fade-up.will-animate { opacity: 0; transform: translateY(30px); }
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+  /* ---- RESPONSIVE ---- */
+  @media (max-width: 900px) {
+    .about-section, .atmosphere-section, .contact-section {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+    .atmos-image { order: 1; }
+    .atmos-content { order: 2; }
+    .atmos-image img, .about-image img { height: 320px; }
+    nav a:not(.btn-book) { display: none; }
+    .mobile-menu-toggle { display: block; }
+    .hero-badges { display: none; }
+    .atmos-features { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 600px) {
+    header { padding: 0 4%; }
+    section { padding: 60px 4%; }
+    .why-grid { grid-template-columns: 1fr; }
+    .price-grid { grid-template-columns: 1fr; }
+    .reviews-grid { grid-template-columns: 1fr; }
+    .hero { padding: 100px 4% 70px; }
+    footer { flex-direction: column; text-align: center; }
+  }
+</style>
 </head>
 <body>
-<p>Coming soon.</p>
+
+<!-- HEADER -->
+<header>
+  <a href="#" class="logo">Barber <span>Beasts</span></a>
+  <nav>
+    <a href="#services">Services</a>
+    <a href="#about">About</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#contact">Contact</a>
+    <a href="https://www.fresha.com/a/barber-beasts-portstewart-21-the-promenade-kols8t7i" target="_blank" rel="noopener" class="btn-book">Book Online</a>
+  </nav>
+  <button class="mobile-menu-toggle" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content fade-up">
+    <span class="eyebrow">Portstewart, Causeway Coast</span>
+    <h1>Portstewart's Premier<br>Barbershop — <em>Where Every<br>Cut Is a Craft</em></h1>
+    <p>Expert haircuts, hot towel shaves, and beard trims from barbers trained at the London School of Barbers. On the Promenade, steps from the harbour.</p>
+    <div class="hero-cta">
+      <a href="https://www.fresha.com/a/barber-beasts-portstewart-21-the-promenade-kols8t7i" target="_blank" rel="noopener" class="btn-primary">Book Online Now</a>
+      <a href="#services" class="btn-secondary">See Services & Prices</a>
+    </div>
+  </div>
+
+  <div class="hero-badges">
+    <div class="hero-badge">
+      <div class="num">4.5★</div>
+      <div class="label">Google Rating</div>
+    </div>
+    <div class="badge-divider"></div>
+    <div class="hero-badge">
+      <div class="num">1,700+</div>
+      <div class="label">Fresha Reviews</div>
+    </div>
+    <div class="badge-divider"></div>
+    <div class="hero-badge">
+      <div class="num">LSB</div>
+      <div class="label">London School of Barbers</div>
+    </div>
+  </div>
+</section>
+
+<!-- TAGLINE STRIP -->
+<div class="tagline-strip fade-up">
+  <h2><em>Where Tradition</em> Meets Trend</h2>
+  <p>Located in the Causeway Coast's picturesque seaside town of Portstewart, Barber Beasts offers its customers a unique experience in all aspects of male grooming — whether it's the latest hairstyle or a luxury hot towel shave.</p>
+  <div class="gold-rule"></div>
+</div>
+
+<!-- SERVICES -->
+<section class="services-section" id="services">
+  <div class="services-header fade-up">
+    <span class="section-label">Pricing</span>
+    <h2 class="section-title">Services & Prices</h2>
+    <p class="section-sub">Transparent pricing for everyone. Book online and your appointment starts on time, every time.</p>
+  </div>
+
+  <div class="price-grid">
+    <!-- Adult -->
+    <div class="price-card fade-up">
+      <div class="price-card-header">
+        <h3>Adult</h3>
+        <span class="category-tag">18+</span>
+      </div>
+      <div class="price-card-body">
+        <div class="price-row"><span class="service-name">Haircut</span><span class="price">£17</span></div>
+        <div class="price-row"><span class="service-name">Fade (sides only)</span><span class="price">£14</span></div>
+        <div class="price-row"><span class="service-name">Basic Clipper Cut</span><span class="price">£12</span></div>
+        <div class="price-row"><span class="service-name">Haircut + Beard Trim & Shape</span><span class="price">£23.50</span></div>
+        <div class="price-row"><span class="service-name">Clipper Cut + Beard</span><span class="price">£18.50</span></div>
+      </div>
+    </div>
+
+    <!-- Senior -->
+    <div class="price-card fade-up">
+      <div class="price-card-header">
+        <h3>Senior</h3>
+        <span class="category-tag">65+</span>
+      </div>
+      <div class="price-card-body">
+        <div class="price-row"><span class="service-name">Haircut</span><span class="price">£13.50</span></div>
+        <div class="price-row"><span class="service-name">Clipper Cut</span><span class="price">£9.50</span></div>
+        <div class="price-row"><span class="service-name">Haircut + Beard</span><span class="price">£18.50</span></div>
+        <div class="price-row"><span class="service-name">Clipper Cut + Beard</span><span class="price">£14.50</span></div>
+      </div>
+    </div>
+
+    <!-- Student -->
+    <div class="price-card fade-up">
+      <div class="price-card-header">
+        <h3>Student</h3>
+        <span class="category-tag">Years 13–14</span>
+      </div>
+      <div class="price-card-body">
+        <div class="price-row"><span class="service-name">Haircut</span><span class="price">£15.50</span></div>
+        <div class="price-row"><span class="service-name">Fade (sides only)</span><span class="price">£12.50</span></div>
+        <div class="price-row"><span class="service-name">Clipper Cut</span><span class="price">£11</span></div>
+        <div class="price-row"><span class="service-name">Haircut + Beard</span><span class="price">£21</span></div>
+      </div>
+    </div>
+
+    <!-- Youth & Child -->
+    <div class="price-card fade-up">
+      <div class="price-card-header">
+        <h3>Youth & Children</h3>
+        <span class="category-tag">P1–Yr12</span>
+      </div>
+      <div class="price-card-body">
+        <div class="price-row"><span class="service-name">Youth Haircut (Yrs 8–12)</span><span class="price">£14.50</span></div>
+        <div class="price-row"><span class="service-name">Youth Fade (Yrs 8–12)</span><span class="price">£11.75</span></div>
+        <div class="price-row"><span class="service-name">Child Haircut (P1–P7)</span><span class="price">£13.50</span></div>
+      </div>
+    </div>
+  </div>
+
+  <p class="services-note">Online booking via Fresha — your time is confirmed, we start on time.</p>
+</section>
+
+<!-- ABOUT / EXTERIOR -->
+<section class="about-section" id="about">
+  <div class="about-image fade-up">
+    <img src="images/shop-exterior.png" alt="Barber Beasts shopfront on Portstewart Promenade">
+    <div class="about-image-badge">
+      <div class="big">LSB</div>
+      <div class="small">London School<br>of Barbers</div>
+    </div>
+  </div>
+
+  <div class="about-content fade-up">
+    <span class="section-label">The Beasts Behind the Chair</span>
+    <h2 class="section-title">Skilled Hands.<br>Trusted by Thousands.</h2>
+    <p class="section-sub">Barber Beasts isn't just a haircut. It's the place on the Prom where you walk in and instantly feel at home — great conversation, a proper coffee while you wait, and a barber who genuinely cares about the cut you walk out with.</p>
+
+    <div class="credentials">
+      <div class="credential">
+        <div class="cred-icon">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+        </div>
+        <div class="cred-text">
+          <strong>Keith — Senior Barber</strong>
+          <span>Trained at the London School of Barbers. Master of his craft with years of experience on the Portstewart Prom.</span>
+        </div>
+      </div>
+      <div class="credential">
+        <div class="cred-icon">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+        </div>
+        <div class="cred-text">
+          <strong>Chloe — Barber</strong>
+          <span>Praised by customers across the Causeway Coast triangle as one of the most welcoming and skilled barbers in the area.</span>
+        </div>
+      </div>
+      <div class="credential">
+        <div class="cred-icon">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 8C8 10 5.9 16.17 3.82 19.82A9 9 0 1 0 17 8zM7 17a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm1-4a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/></svg>
+        </div>
+        <div class="cred-text">
+          <strong>Vintage Clothing & Premium Products</strong>
+          <span>Browse our in-store vintage clothing section and a wide range of premium grooming products — a proper destination, not just a barber.</span>
+        </div>
+      </div>
+    </div>
+
+    <a href="https://www.fresha.com/a/barber-beasts-portstewart-21-the-promenade-kols8t7i" target="_blank" rel="noopener" class="btn-primary">Book Your Appointment</a>
+  </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section class="why-section">
+  <div class="why-header fade-up">
+    <span class="section-label" style="color: var(--accent-light);">The Experience</span>
+    <h2 class="section-title light">Everything a Great Barber<br>Should Be</h2>
+    <p class="section-sub light">From the moment you walk in to the moment you walk out looking your best — every detail matters here.</p>
+  </div>
+
+  <div class="why-grid">
+    <div class="why-card fade-up">
+      <img src="images/manhaircut.png" alt="Expert haircut at Barber Beasts" class="why-card-img">
+      <div class="why-card-body">
+        <h3>Expert Cuts Every Time</h3>
+        <p>Keith trained at the London School of Barbers — you're in hands that know what precision actually means. No guesswork, no fixing it later.</p>
+      </div>
+    </div>
+
+    <div class="why-card fade-up">
+      <img src="images/hotshave.png" alt="Hot towel shave at Barber Beasts" class="why-card-img">
+      <div class="why-card-body">
+        <h3>Luxury Hot Towel Shaves</h3>
+        <p>A proper hot towel shave the traditional way. Sit back, relax, and let us handle it — the kind of experience most blokes have never had.</p>
+      </div>
+    </div>
+
+    <div class="why-card fade-up">
+      <img src="images/beardtrim1.jpg" alt="Beard trim and shape at Barber Beasts" class="why-card-img">
+      <div class="why-card-body">
+        <h3>Beard Trim & Shape</h3>
+        <p>Tidy, shaped, and defined. Whether it's a quick trim or a full beard sculpt, we'll make sure it frames your face the way it should.</p>
+      </div>
+    </div>
+
+    <div class="why-card fade-up">
+      <img src="images/waitingarea.png" alt="Barber Beasts waiting area" class="why-card-img">
+      <div class="why-card-body">
+        <h3>The Man Cave Experience</h3>
+        <p>Wingback armchairs, a bean-to-cup coffee machine, vintage clothing to browse, and a barber who actually talks to you. This is your escape.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INTERIOR / ATMOSPHERE -->
+<section class="atmosphere-section">
+  <div class="atmos-content fade-up">
+    <span class="section-label">Inside the Shop</span>
+    <h2 class="section-title">A Stone's Throw from<br>the Harbour — Your Own<br><em style="font-style:normal; color:var(--accent)">Little Man Cave</em></h2>
+    <p class="section-sub">Right on Portstewart Promenade, steps from the harbour. Walk in and leave the outside world behind. This is a place where the cut matters, the conversation is good, and you always leave feeling better than when you arrived.</p>
+
+    <div class="atmos-features">
+      <div class="atmos-feature">
+        <strong>Wingback Armchairs</strong>
+        <span>Proper comfortable waiting</span>
+      </div>
+      <div class="atmos-feature">
+        <strong>Bean-to-Cup Coffee</strong>
+        <span>While you wait, on the house</span>
+      </div>
+      <div class="atmos-feature">
+        <strong>Vintage Clothing</strong>
+        <span>Worth a browse every time</span>
+      </div>
+      <div class="atmos-feature">
+        <strong>Premium Products</strong>
+        <span>Wide range, take one home</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="atmos-image fade-up">
+    <img src="images/shop-interior.png" alt="Inside Barber Beasts barbershop Portstewart">
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews-section" id="reviews">
+  <div class="reviews-header fade-up">
+    <span class="section-label">What Customers Say</span>
+    <h2 class="section-title">Real Reviews from Real<br>Customers</h2>
+    <div class="stars">★★★★★</div>
+    <p class="section-sub" style="margin: 0 auto;">4.5 stars on Google · 5.0 stars on Fresha with over 1,700 reviews. The results speak for themselves.</p>
+  </div>
+
+  <div class="reviews-grid">
+    <div class="review-card fade-up">
+      <div class="stars">★★★★★</div>
+      <p class="review-text">"Keith was very friendly &amp; professional, and above all a great Barber. The online booking system was straightforward &amp; efficient, the appointment started on time, &amp; an excellent men's cut."</p>
+      <div class="reviewer">
+        <div class="reviewer-avatar">G</div>
+        <div class="reviewer-info"><strong>Google Review</strong><span>Verified Customer</span></div>
+      </div>
+    </div>
+
+    <div class="review-card fade-up">
+      <div class="stars">★★★★★</div>
+      <p class="review-text">"This gentleman is about as good as a barber gets. True professional and a perfectionist."</p>
+      <div class="reviewer">
+        <div class="reviewer-avatar">G</div>
+        <div class="reviewer-info"><strong>Google Review</strong><span>Verified Customer</span></div>
+      </div>
+    </div>
+
+    <div class="review-card fade-up">
+      <div class="stars">★★★★★</div>
+      <p class="review-text">"Keith and Chloe are the two most welcoming, friendliest and competent barbers in the area and I'd highly recommend either of them to anyone over any barbers within the triangle area!"</p>
+      <div class="reviewer">
+        <div class="reviewer-avatar">G</div>
+        <div class="reviewer-info"><strong>Google Review</strong><span>Verified Customer</span></div>
+      </div>
+    </div>
+
+    <div class="review-card fade-up">
+      <div class="stars">★★★★★</div>
+      <p class="review-text">"I have been getting my hair cut with Keith at Barber Beasts for years. He is a true professional and master of his craft. Took my 5 year old son for a haircut today — best cut he has ever had."</p>
+      <div class="reviewer">
+        <div class="reviewer-avatar">G</div>
+        <div class="reviewer-info"><strong>Google Review</strong><span>Verified Customer</span></div>
+      </div>
+    </div>
+
+    <div class="review-card fade-up">
+      <div class="stars">★★★★★</div>
+      <p class="review-text">"Excellent haircut, great chat and good vintage clothing section in the barbers too, which is well worth a browse."</p>
+      <div class="reviewer">
+        <div class="reviewer-avatar">G</div>
+        <div class="reviewer-info"><strong>Google Review</strong><span>Verified Customer</span></div>
+      </div>
+    </div>
+
+    <div class="review-card fade-up">
+      <div class="stars">★★★★★</div>
+      <p class="review-text">"Great cut as always with Keith! 1st class service as always! C u next time!"</p>
+      <div class="reviewer">
+        <div class="reviewer-avatar">N</div>
+        <div class="reviewer-info"><strong>Niall O.</strong><span>Fresha Verified</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="reviews-cta fade-up">
+    <a href="https://www.google.com/maps/search/?api=1&query=Barber+Beasts+21+The+Promenade+Portstewart" target="_blank" rel="noopener" class="btn-outline">See All Reviews on Google</a>
+  </div>
+</section>
+
+<!-- BOOKING CTA -->
+<section class="booking-section fade-up">
+  <h2>Ready to Look Your <em>Absolute Best?</em></h2>
+  <p>Book online in seconds. Pick your time, pick your barber, show up and enjoy it. No waiting around, no walk-in lottery — your spot is locked in.</p>
+  <a href="https://www.fresha.com/a/barber-beasts-portstewart-21-the-promenade-kols8t7i" target="_blank" rel="noopener" class="btn-primary" style="font-size:1rem; padding: 1rem 2.5rem;">Book Your Appointment Now</a>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <div class="contact-info fade-up">
+    <span class="section-label">Find Us</span>
+    <h2>Come and See Us<br>on the Prom</h2>
+
+    <div class="contact-details">
+      <div class="contact-item">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+        </div>
+        <div class="contact-item-text">
+          <strong>Address</strong>
+          <p><a href="https://www.google.com/maps/search/?api=1&query=Barber+Beasts+21+The+Promenade+Portstewart" target="_blank" rel="noopener">21 The Promenade, Portstewart, BT55 7AD</a></p>
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>
+        </div>
+        <div class="contact-item-text">
+          <strong>Opening Hours</strong>
+          <div class="hours-grid">
+            <span class="hours-day">Mon</span><span class="hours-closed">Closed</span>
+            <span class="hours-day">Tue</span><span class="hours-time">9:00am – 5:30pm</span>
+            <span class="hours-day">Wed</span><span class="hours-time">9:00am – 5:30pm</span>
+            <span class="hours-day">Thu</span><span class="hours-time">9:00am – 6:30pm</span>
+            <span class="hours-day">Fri</span><span class="hours-time">9:00am – 6:30pm</span>
+            <span class="hours-day">Sat</span><span class="hours-time">9:00am – 5:30pm</span>
+            <span class="hours-day">Sun</span><span class="hours-closed">Closed</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </div>
+        <div class="contact-item-text">
+          <strong>Follow Us</strong>
+          <p><a href="https://www.instagram.com/barber_beasts/" target="_blank" rel="noopener">@barber_beasts on Instagram</a></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-social">
+      <a href="https://www.instagram.com/barber_beasts/" target="_blank" rel="noopener" aria-label="Instagram">
+        <img src="images/instagram.webp" alt="Instagram">
+      </a>
+      <a href="https://www.facebook.com/search/top?q=barber%20beasts%20portstewart" target="_blank" rel="noopener" aria-label="Facebook">
+        <img src="images/facebook.webp" alt="Facebook">
+      </a>
+    </div>
+  </div>
+
+  <div class="contact-form-wrap fade-up">
+    <h3>Send Us a Message</h3>
+
+    <form id="contactForm">
+      <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
+      <input type="hidden" name="subject" value="New enquiry from Barber Beasts website">
+      <input type="hidden" name="redirect" value="">
+
+      <!-- Honeypot anti-spam -->
+      <input type="text" name="bot-field" class="honeypot" tabindex="-1" autocomplete="off">
+
+      <div class="form-group">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" required placeholder="e.g. John Smith">
+      </div>
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" required placeholder="your@email.com">
+      </div>
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" required placeholder="What can we help with?"></textarea>
+      </div>
+
+      <button type="submit" class="form-submit" id="formSubmit">Send Message</button>
+    </form>
+
+    <div class="form-success-msg" id="formSuccess">
+      <h4>Message Received!</h4>
+      <p>We'll be in touch soon. Want a quicker response? <a href="https://www.fresha.com/a/barber-beasts-portstewart-21-the-promenade-kols8t7i" target="_blank" rel="noopener">Book online via Fresha</a> for an instant confirmation.</p>
+    </div>
+  </div>
+</section>
+
+<!-- URGENCY BANNER -->
+<div class="urgency-banner">
+  <p>Appointments fill up fast — especially Thursdays and Fridays. <a href="https://www.fresha.com/a/barber-beasts-portstewart-21-the-promenade-kols8t7i" target="_blank" rel="noopener">Book your slot online now</a> and guarantee your time.</p>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <a href="#" class="footer-logo">Barber <span>Beasts</span></a>
+  <p class="footer-copy">21 The Promenade, Portstewart, BT55 7AD &nbsp;|&nbsp; Website by <a href="https://www.realfastwebsite.com" target="_blank" rel="noopener">www.realfastwebsite.com</a></p>
+</footer>
+
+<script>
+  // Scroll animations — progressive enhancement
+  if (typeof IntersectionObserver !== 'undefined') {
+    document.querySelectorAll('.fade-up').forEach(el => el.classList.add('will-animate'));
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  }
+
+  // Contact form — AJAX via Web3Forms
+  const form = document.getElementById('contactForm');
+  const submitBtn = document.getElementById('formSubmit');
+  const successMsg = document.getElementById('formSuccess');
+
+  if (form) {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      submitBtn.textContent = 'Sending...';
+      submitBtn.disabled = true;
+
+      try {
+        const res = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          body: new FormData(form)
+        });
+        const data = await res.json();
+
+        if (data.success) {
+          submitBtn.textContent = 'Sent!';
+          submitBtn.classList.add('success');
+          setTimeout(() => {
+            form.style.display = 'none';
+            successMsg.style.display = 'block';
+          }, 800);
+        } else {
+          throw new Error('Failed');
+        }
+      } catch {
+        submitBtn.textContent = 'Something went wrong — try again';
+        submitBtn.disabled = false;
+      }
+    });
+  }
+</script>
+
 </body>
 </html>
