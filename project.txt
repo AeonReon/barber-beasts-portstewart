@@ -1,0 +1,200 @@
+BARBER BEASTS — PROJECT FILE
+=============================
+Folder created: 2026-04-01
+Status: Research complete — ready for build with Opus
+
+---
+
+BUSINESS DETAILS
+----------------
+Name: Barber Beasts
+Type: Barber Shop & Grooming Product Retail Store
+Address: 21 The Promenade, Portstewart, BT55 7AD, Northern Ireland
+Location context: Causeway Coast — on the Portstewart Promenade, stone's throw from the harbour
+Website: barberbeasts.com (Wix-built — we are replacing it)
+Instagram: @barber_beasts
+Facebook: Search "Barber Beasts Portstewart"
+Booking: Fresha — https://www.fresha.com/a/barber-beasts-portstewart-21-the-promenade-kols8t7i
+Phone: Not publicly listed
+Email: Not publicly listed
+Logo: Not provided — use styled text
+Web3Forms key: TO BE ADDED BY CLIENT
+
+---
+
+TAGLINE
+-------
+"Where Tradition Meets Trend"
+
+---
+
+BRAND DESCRIPTION (from their own site)
+----------------------------------------
+Located in the Causeway Coast's picturesque seaside town of Portstewart, Barber Beasts offers
+its customers a unique experience in all aspects of male grooming — whether it's the latest
+hairstyle or a luxury hot towel shave. You'll find them at a stone's throw from the harbour,
+in their very own little man cave where you can relax and unwind from the hustle and bustle
+of the world outside.
+
+---
+
+TEAM
+----
+- Keith (Senior Barber) — trained by London School of Barbers. Main face of the brand.
+- Chloe (Barber) — mentioned alongside Keith in reviews
+
+---
+
+UNIQUE SELLING POINTS / ATMOSPHERE
+------------------------------------
+- "Man cave" atmosphere — escape from the outside world
+- Wingback armchairs in waiting area
+- Bean-to-cup coffee machine while you wait
+- Vintage clothing section in-store (well worth a browse, per multiple reviewers)
+- Premium grooming products retail (wide range)
+- Luxury hot towel shaves
+- Keith trained by London School of Barbers
+- Online booking via Fresha (easy, efficient, on-time)
+
+---
+
+OPENING HOURS
+-------------
+Monday: Closed
+Tuesday: 9:00am – 5:30pm
+Wednesday: 9:00am – 5:30pm
+Thursday: 9:00am – 6:30pm
+Friday: 9:00am – 6:30pm
+Saturday: 9:00am – 5:30pm
+Sunday: Closed
+
+---
+
+SERVICES & PRICING
+-------------------
+
+ADULT
+Haircut: £17
+Fade (sides only): £14
+Basic Clipper Cut: £12
+Haircut + Beard Trim & Shape: £23.50
+Clipper Cut + Beard: £18.50
+
+SENIOR (65+)
+Haircut: £13.50
+Clipper Cut: £9.50
+Haircut + Beard: £18.50
+Clipper Cut + Beard: £14.50
+
+STUDENT (Years 13–14)
+Haircut: £15.50
+Fade: £12.50
+Clipper Cut: £11
+Haircut + Beard: £21
+
+YOUTH (Years 8–12)
+Haircut: £14.50
+Fade: £11.75
+
+CHILD (Years P1–P7)
+Haircut: £13.50
+
+---
+
+RATINGS
+-------
+Google: 4.5 stars / 50 reviews
+Fresha: 5.0 stars / 1,702 reviews
+
+---
+
+REAL GOOGLE REVIEWS (use on website)
+--------------------------------------
+1. "Keith was very friendly & professional, and above all a great Barber. The online booking
+   system was straightforward & efficient, the appointment started on time, & an excellent
+   men's cut."
+
+2. "This gentleman is about as good as a barber gets. True professional and a perfectionist."
+
+3. "Keith and Chloe are the two most welcoming, friendliest and competent barbers in the area
+   and I'd highly recommend either of them to anyone over any barbers within the triangle area!"
+
+4. "I have been getting my own hair cut with Keith at Barber Beasts for years. He is a true
+   professional and master of his craft. Took my 5 year old son for a haircut today — best
+   cut he has ever had."
+
+5. "Fantastic haircut from Keith — check Barber Beasts out, you won't be disappointed.
+   Five stars."
+
+6. "Lovely shop — a credit to Keith. Highly recommended barbershop experience. Wide range of
+   premium grooming products available too."
+
+7. "Excellent haircut, great chat and good vintage clothing section in the barbers too,
+   which is well worth a browse."
+
+8. "Convivial surroundings on Portstewart Prom and of course intelligent conversation
+   with Keith!"
+
+9. "Great cut as always with Keith! 1st class service as always!" — Niall O. (Fresha)
+
+10. "Always friendly professional service, brilliant!" — Philip F. (Fresha)
+
+Google Maps review link: https://www.google.com/maps/search/?api=1&query=Barber+Beasts+21+The+Promenade+Portstewart
+
+---
+
+CTA / ONE CLEAR NEXT STEP
+--------------------------
+Primary CTA: "Book Online" → https://www.fresha.com/a/barber-beasts-portstewart-21-the-promenade-kols8t7i
+
+---
+
+COLOUR PALETTE NOTES
+----------------------
+From what's visible online / Instagram: dark shop signage, warm interior tones.
+Known brand colours to check images for:
+- Shopfront/signage colour → use as accent
+- Interior feels warm, classic barbershop (dark wood, leather chairs)
+Suggested palette direction: deep navy or charcoal dark sections, warm cream/off-white
+light sections, amber/gold or forest green accent (classic barbershop palette) — confirm
+against hero-street.png and shop-exterior.png images.
+
+---
+
+IMAGES IN /images/ FOLDER
+--------------------------
+CLIENT PHOTOS:
+- hero-street.png       → Hero section background (Portstewart Promenade street shot)
+- shop-exterior.png     → About/intro section (front of shop)
+- shop-interior.png     → Interior shot section (further down page)
+
+STOCK (from Barbershop templates — replace with real photos when available):
+- manhaircut.png        → Service card: Haircut
+- beardtrim1.jpg        → Service card: Beard Trim
+- hotshave.png          → Service card: Hot Towel Shave
+- bookanappointment.png → Booking CTA section
+- waitingarea.png       → About/atmosphere section
+- wettowelshave.png     → Service card: Wet Shave
+- manbeardtrim.png      → Service card: Beard
+- walkinswelcome.png    → Walk-ins card
+
+SOCIAL ICONS:
+- instagram.webp
+- facebook.webp
+- whatsapp.webp
+
+---
+
+BUILD NOTES FOR OPUS
+---------------------
+- No phone number available — no WhatsApp button, no Call Us button in header
+- CTA is "Book Online" → Fresha link
+- Vintage clothing section is a unique selling point — mention it
+- Keith trained by London School of Barbers — credibility anchor, use it
+- The "man cave" vibe + wingback armchairs + bean-to-cup coffee = strong atmosphere copy
+- Pricing table needed (multiple age categories)
+- Use real reviews above — all verified from Fresha/Google search
+- Logo: not available — use styled text "Barber Beasts" in the nav
+- Instagram: @barber_beasts — link to https://www.instagram.com/barber_beasts/
+- Template: use Barbershop template stock images for service/why cards
+- Follow user image placement: hero=street, exterior=mid-page, interior=further down
